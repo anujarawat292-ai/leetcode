@@ -1,1 +1,18 @@
-
+name: Sync Leetcode
+on:
+workflow_dispatch:
+schedule:
+- cron: "0 8 * * *"
+jobs:
+build:
+runs-on: windows
+steps:
+- name: Sync
+uses: anujarawat292-ai/leetcode
+with:
+github-token: ${{ github.token }}
+leetcode-csrf-token: ${{ secrets.LEETCODE_CSRF_TOKEN }}
+leetcode-session: ${{ secrets.LEETCODE_SESSION }}
+destination-folder: leetcodeFixes
+verbose: true
+commit-header: "[LeetCode Sync]"
