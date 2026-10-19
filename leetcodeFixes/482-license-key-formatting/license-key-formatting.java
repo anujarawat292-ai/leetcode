@@ -10,18 +10,14 @@ class Solution {
         StringBuilder str = new StringBuilder();
         int cur =  first;
         int i =0;
-        System.out.println("len"+len);
         for(char c : s.toCharArray()){
             i++;
             if(c == '-') continue;
             str.append(Character.toUpperCase(c));
             --cur;
             if(cur==0){
-                System.out.println("1"+c);
-                 System.out.println("i"+i);
                 cur = k;
                 if(i < len){
-                    System.out.println(c);
                     str.append('-');
                 }
             }
