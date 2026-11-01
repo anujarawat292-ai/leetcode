@@ -40,21 +40,15 @@ class Solution {
                 arr[k] = nums1[i];
                 i++;
             }
-            System.out.println("k "+k);
             if(k == mid){
                 if(len%2 != 0){
                     ans =  arr[k];
-                    System.out.println("ans "+ans);
                 }else{
                     ans =(double) (arr[k-1] + arr[k])/2;
-                 System.out.println("arr[k-1] "+arr[k-1]+" arr[k] "+arr[k]);
-                System.out.println("ans "+ans);
-
                 }
             }
             k++;
         }
-        
         return ans;
     }
 }
